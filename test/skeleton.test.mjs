@@ -1,8 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-// Grammar copied by value from UIUXDesignStandards (domain.kebab-case-name). Not frozen (ADR 0001 is Proposed).
-const CANONICAL_ID = /^[a-z][a-z0-9-]*\.[a-z][a-z0-9-]*$/;
+// Grammar copied exactly from UIUXDesignStandards scripts/catalog.mjs (ADR 0001 is Proposed).
+const CANONICAL_ID = /^[a-z][a-z0-9]*(-[a-z0-9]+)*(.[a-z0-9]+(-[a-z0-9]+)*)+$/; // exact copy of UIUXDesignStandards scripts/catalog.mjs line 94
 const domains = ["azid", "azsecret", "aziac", "azgov", "aznet", "azdata", "azdeploy", "azops"];
 const reserved = ["testing", "security", "scm", "verification"]; // EngineeringStandards domains
 
@@ -11,4 +11,7 @@ test("candidate rule-ID domains fit the portfolio grammar", () => {
 });
 test("candidate domains do not shadow EngineeringStandards domains", () => {
   for (const d of domains) assert.ok(!reserved.includes(d));
+});
+test("grammar rejects malformed ids", () => {
+  for (const bad of ["test-.example--rule", "Test.rule", "x"]) assert.doesNotMatch(bad, CANONICAL_ID);
 });
