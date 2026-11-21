@@ -1,0 +1,9 @@
+{
+  "name": "azure-engineering-standards",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Unreleased skeleton; no standards implemented.",
+  "type": "module",
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=18" }
+}
