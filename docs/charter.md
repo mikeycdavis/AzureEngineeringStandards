@@ -1,4 +1,4 @@
-<!-- Charter revision 3; authoritative evidence: F:\GitHub Evidence\AzureEngineeringStandards\evidence-1\ -->
+<!-- Charter revision 4; authoritative evidence: F:\GitHub Evidence\AzureEngineeringStandards\evidence-1\ -->
 # Charter packet 02 — AzureEngineeringStandards
 
 Status: DRAFT, read-only. Backlog IDs are draft labels, not issue numbers. See
@@ -18,8 +18,8 @@ repository's code and evidence.
 - **Identity and access:** Microsoft Entra ID app registrations and service principals, managed
   identities, workload identity federation (OIDC) for pipelines, RBAC role assignments and scope,
   least privilege, no standing owner/contributor at broad scope, privileged access.
-- **Secrets and keys:** Key Vault usage (access model, RBAC vs access policies, soft-delete/purge
-  protection, rotation), no secrets in IaC/parameters/pipeline variables, secret-reference patterns.
+- **Secrets and keys:** Key Vault usage (access model, RBAC vs access policies, purge
+  protection (soft delete cannot be disabled), rotation), no secrets in IaC/parameters/pipeline variables, secret-reference patterns.
 - **Infrastructure as code:** Bicep/ARM (and Terraform if declared) hygiene, parameterisation,
   module pinning (Azure Verified Modules), what-if/plan review, drift, state handling, tagging.
 - **Landing zone and governance:** subscription/management-group structure, Azure Policy
@@ -78,13 +78,13 @@ Layout per conventions §2. Proposed 30 standards:
 | 01 | Boundary with EngineeringStandards, SoftwareTesting, platform packs | Foundations |
 | 02 | Azure applicability and the declared estate (subscriptions, environments) | Foundations |
 | 03 | Evidence surfaces: IaC static, ingested exports, attested | Foundations |
-| 04 | Workload identity: managed identity and federation first | Identity |
+| 04 | Workload identity: managed identity and federation first (authority: Entra and Azure DevOps documentation, not the MCSB, which still accepts rotated client secrets) | Identity |
 | 05 | Service principals and app registrations (ownership, expiry, credentials) | Identity |
 | 06 | RBAC least privilege, scope, break-glass | Identity |
-| 07 | MFA, Conditional Access, PIM, privileged access review cadence, and break-glass accounts | Identity |
-| 08 | Key Vault design: access model, purge protection, rotation | Secrets |
+| 07 | MFA, Conditional Access, PIM, privileged access review cadence, and emergency access accounts (no MFA exemption; passwordless per current Entra guidance) | Identity |
+| 08 | Key Vault design: access model (explicit `false`, or omitted on API versions before 2026-02-01, flags non-RBAC), purge protection, rotation | Secrets |
 | 09 | Secret references in IaC and pipelines — never values | Secrets |
-| 10 | Pipeline credentials and service connections | Secrets/CI |
+| 10 | Pipeline credentials and service connections (federation issuer checks must accept the Entra issuer; the Azure DevOps issuer retires 2027-07-01) | Secrets/CI |
 | 11 | IaC structure, parameters, module pinning, tagging | IaC |
 | 12 | Plan/what-if review and drift handling | IaC |
 | 13 | State and parameter file safety | IaC |
