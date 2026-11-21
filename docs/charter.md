@@ -150,7 +150,7 @@ usage found by the classifier. Declared `no-azure` is a declaration, not a findi
 | AZE-B12 | Pipeline/deployment standards 19-20 and 25 (Azure Pipelines in v1; Advanced Security deferred) | Decided on or before 2026-11-19 19:36 PST (2026-11-20T03:36Z) |
 | AZE-B13 | Fixtures: compliant, secret-in-param, broad RBAC, no purge protection, shared prod/dev identity | |
 | AZE-B14 | StandardsEnforcer adapter entry for this pack | Cross-repo |
-| AZE-B15 | Adversarial fixtures proving each Azure rule class; real-project adoption recorded as a later milestone | No qualifying real Azure workload under F:\Repos; no adoption evidence invented |
+| AZE-B15 | Adversarial fixtures proving each Azure rule class; real-project adoption recorded as a later milestone | Fixture-only by owner decision; no adoption evidence invented |
 
 ## 8. Applied decisions and open questions
 
