@@ -1,8 +1,8 @@
-<!-- Charter revision 3; authoritative evidence: F:\GitHub Evidence$r\evidence-1\ -->
+<!-- Charter revision 3; authoritative evidence: F:\GitHub Evidence\AzureEngineeringStandards\evidence-1\ -->
 # Charter packet 02 — AzureEngineeringStandards
 
 Status: DRAFT, read-only. Backlog IDs are draft labels, not issue numbers. See
-[00-shared-conventions.md](00-shared-conventions.md).
+`00-shared-conventions.md` (kept in the evidence folder above, not in this repository).
 
 ## 1. Purpose
 
@@ -50,9 +50,11 @@ repository's code and evidence.
 
 ## 4. Authoritative first-party sources (all UNVERIFIED until opened)
 
+> Status note: this section is the pre-verification charter text. The source ledger in the evidence folder (hashed in `docs/evidence-index.md`) records which sources were later opened (tool-extracted, not human-reviewed) and governs; "unverified" below is superseded per source by the ledger.
+
 | Source | Role |
 | --- | --- |
-| Microsoft Safe Secrets Standard (`learn.microsoft.com/en-us/security/zero-trust/sfi/safe-secrets-standard`), Azure Well-Architected security guidance (`.../azure/well-architected/security/`), Key Vault security guidance (`.../azure/key-vault/general/secure-your-key-vault`) — cited by Mike, not yet opened by me | Primary basis for the identity-first, secret-elimination milestone |
+| Microsoft Safe Secrets Standard (`learn.microsoft.com/en-us/security/zero-trust/sfi/safe-secrets-standard`), Azure Well-Architected security guidance (`.../azure/well-architected/security/`), Key Vault security guidance (`.../azure/key-vault/general/secure-key-vault`) — cited by Mike, not yet opened by me | Primary basis for the identity-first, secret-elimination milestone |
 | Microsoft Learn — Azure Well-Architected Framework (security, reliability, operational excellence pillars) | Design principles; used as provenance, not copied |
 | Microsoft Learn — Cloud Adoption Framework / Azure Landing Zones | Governance, subscription/management-group structure |
 | Microsoft cloud security benchmark (MCSB) | Control catalog, identity/network/data/posture families |
@@ -69,7 +71,7 @@ repository's code and evidence.
 
 ## 5. Proposed hierarchy
 
-Layout per conventions §2. Proposed ~32 standards:
+Layout per conventions §2. Proposed 30 standards:
 
 | # | Standard | Group |
 | --- | --- | --- |
