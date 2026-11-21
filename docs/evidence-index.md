@@ -8,3 +8,5 @@ f9f4a77dcbe29ede1eb01462cd122bb13f39893636d6d77e822ec27fd3467add  02-azure-sourc
 ```
 
 'Opened' sources are tool-extracted, not human-reviewed.
+
+Note: `docs/charter.md` in this repository is charter revision 3, derived from the hashed evidence charter above. It differs from the hashed file by corrections made after review (evidence path, conventions reference, source-status note, settled open questions, corrected cross-references and the fixture-only note). The hashed file is the pre-review text; this repository's charter governs where they differ.

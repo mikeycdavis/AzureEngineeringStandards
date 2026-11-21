@@ -31,7 +31,7 @@ repository's code and evidence.
 - **Operations:** diagnostic settings, Log Analytics/Monitor/alerting, Defender for Cloud posture
   declarations, SLO/health probes, incident and rollback runbooks, DR/RTO/RPO declarations.
 - **Azure DevOps Advanced Security** findings handling (GHAzDO alerts): DEFERRED per Mike, on or before 2026-11-19 19:36 PST (2026-11-20T03:36Z) (open
-  question 1).
+  question 2).
 
 ## 3. Non-goals
 
@@ -145,7 +145,7 @@ usage found by the classifier. Declared `no-azure` is a declaration, not a findi
 | AZE-B07 | Evidence ingestion contract for exports (role assignments, policy compliance, what-if output) | Mirror UIUX ADR 0002; no live access |
 | AZE-B08 | Identity standards 04–07 and catalog slice | Highest value first |
 | AZE-B09 | Secrets standards 08–10 and detectors (values never echoed in output) | Output-safety test |
-| AZE-B10 | IaC standards 11–13 and Bicep static parser/detectors | Zero-dependency |
+| AZE-B10 | IaC standards 11–13 and ARM JSON ingestion (from `bicep build`) and detectors; no Bicep parser (decision AZ17) | Zero-dependency |
 | AZE-B11 | Network/data/environment-separation standards 16–18 | |
 | AZE-B12 | Pipeline/deployment standards 19-20 and 25 (Azure Pipelines in v1; Advanced Security deferred) | Decided on or before 2026-11-19 19:36 PST (2026-11-20T03:36Z) |
 | AZE-B13 | Fixtures: compliant, secret-in-param, broad RBAC, no purge protection, shared prod/dev identity | |
@@ -153,6 +153,8 @@ usage found by the classifier. Declared `no-azure` is a declaration, not a findi
 | AZE-B15 | Adversarial fixtures proving each Azure rule class; real-project adoption recorded as a later milestone | No qualifying real Azure workload under F:\Repos; no adoption evidence invented |
 
 ## 8. Applied decisions and open questions
+
+Note on the fixture-only choice: the earlier survey statement that no real Azure workload exists under F:Repos was incomplete; tracked Azure-relevant projects do exist there. Fixture-only v1 validation is therefore an owner decision, not a verified absence of candidates. "Qualifying" is undefined and any adopter trial must follow the read-only, commit-pinned-copy rule (T12) and cannot be claimed from fixtures.
 
 Applied (Mike, on or before 2026-11-19 19:36 PST (2026-11-20T03:36Z)): Azure Pipelines in v1; Advanced Security deferred; ARM/Bicep first,
 Terraform deferred; v1 validated by adversarial fixtures only.
