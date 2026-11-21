@@ -1,4 +1,4 @@
-<!-- Charter revision 4; authoritative evidence: F:\GitHub Evidence\AzureEngineeringStandards\evidence-1\ -->
+<!-- Charter revision 5; authoritative evidence: F:\GitHub Evidence\AzureEngineeringStandards\evidence-1\ -->
 # Charter packet 02 — AzureEngineeringStandards
 
 Status: DRAFT, read-only. Backlog IDs are draft labels, not issue numbers. See
@@ -119,7 +119,7 @@ usage found by the classifier. Declared `no-azure` is a declaration, not a findi
 
 | ID | Failure | Detection posture |
 | --- | --- | --- |
-| T1 | Secret value in Bicep parameters, pipeline variable, or repo | Static scan `partial`; refs Eng `security.no-secrets-in-artifacts`; never records the value, only location + hash prefix policy |
+| T1 | Secret value in Bicep parameters, pipeline variable, or repo | Static scan `partial`; refs Eng `security.no-secrets-in-artifacts`; never records the value or any hash or prefix derived from it; reports only file, line, detector/rule ID and category; a planted canary must be absent from every output, log and artifact |
 | T2 | Long-lived service-principal secret in a service connection instead of federation | Pipeline/IaC static + attestation |
 | T3 | Over-broad RBAC (Owner/Contributor at subscription, wildcard actions) | Static IaC check; live assignments only via ingested export |
 | T4 | Key Vault without purge protection / public network access | Static IaC check |
