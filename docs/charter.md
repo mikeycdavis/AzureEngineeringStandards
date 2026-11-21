@@ -154,7 +154,7 @@ usage found by the classifier. Declared `no-azure` is a declaration, not a findi
 
 ## 8. Applied decisions and open questions
 
-Note on the fixture-only choice: the earlier survey statement that no real Azure workload exists under F:Repos was incomplete; tracked Azure-relevant projects do exist there. Fixture-only v1 validation is therefore an owner decision, not a verified absence of candidates. "Qualifying" is undefined and any adopter trial must follow the read-only, commit-pinned-copy rule (T12) and cannot be claimed from fixtures.
+Note on the fixture-only choice: the earlier survey statement that no real Azure workload exists under F:\Repos was incomplete; tracked Azure-relevant projects do exist there. Fixture-only v1 validation is therefore an owner decision, not a verified absence of candidates. "Qualifying" is undefined and any adopter trial must follow the read-only, commit-pinned-copy rule (decision-packet item T12, not this charter's threat T12) and cannot be claimed from fixtures.
 
 Applied (Mike, on or before 2026-11-19 19:36 PST (2026-11-20T03:36Z)): Azure Pipelines in v1; Advanced Security deferred; ARM/Bicep first,
 Terraform deferred; v1 validated by adversarial fixtures only.
