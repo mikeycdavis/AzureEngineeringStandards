@@ -1,4 +1,4 @@
-<!-- Charter revision 5; authoritative evidence: F:\GitHub Evidence\AzureEngineeringStandards\evidence-1\ -->
+<!-- Charter revision 6; authoritative evidence: F:\GitHub Evidence\AzureEngineeringStandards\evidence-1\ -->
 # Charter packet 02 — AzureEngineeringStandards
 
 Status: DRAFT, read-only. Backlog IDs are draft labels, not issue numbers. See
@@ -81,7 +81,7 @@ Layout per conventions §2. Proposed 30 standards:
 | 04 | Workload identity: managed identity and federation first (authority: Entra and Azure DevOps documentation, not the MCSB, which still accepts rotated client secrets) | Identity |
 | 05 | Service principals and app registrations (ownership, expiry, credentials) | Identity |
 | 06 | RBAC least privilege, scope, break-glass | Identity |
-| 07 | MFA, Conditional Access, PIM, privileged access review cadence, and emergency access accounts (no MFA exemption; passwordless per current Entra guidance) | Identity |
+| 07 | MFA, Conditional Access, PIM, privileged access review cadence, and emergency access accounts (phishing-resistant passwordless authentication, FIDO2 passkey or certificate-based, different from normal admin methods; a Conditional Access exclusion is not an exemption from Microsoft's mandatory MFA enforcement, which has no opt-out for emergency accounts; authority: Entra documentation, with MCSB PA-5.1 non-normative on this point) | Identity |
 | 08 | Key Vault design: access model (explicit `false`, or omitted on API versions before 2026-02-01, flags non-RBAC), purge protection, rotation | Secrets |
 | 09 | Secret references in IaC and pipelines — never values | Secrets |
 | 10 | Pipeline credentials and service connections (federation issuer checks must accept the Entra issuer; the Azure DevOps issuer retires 2027-07-01) | Secrets/CI |
